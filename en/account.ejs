@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futurama | Account</title>
+    <link rel="stylesheet" href="../static/style/style_account.css">
+    <link rel="shortcut icon" href="../static/planet-express.png">
+</head>
+<body>
+    
+    <header id="header">
+        <div id="header-overlay">
+            <div class="container">
+                <h2>Futurama</h2>
+                <div id="bars">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <nav id="nav">
+                    <ul>
+                        <li><a href="/en">Home</a></li>
+                        <li><a href="/en/forum">Forum</a></li>
+                        <li><a href="/en/account">Account</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <script>
+        let k = 0;
+        document.getElementById("bars").addEventListener("click", () => {
+            if (k == 0) {
+                document.getElementById("nav").style.display = "block";
+                document.getElementById("header").style.height = "fit-content";
+                k = 1;
+            } else {
+                document.getElementById("nav").style.display = "none";
+                document.getElementById("header").style.height = "80px";
+                k = 0;
+            }
+            console.log(k);
+        });
+
+        window.addEventListener("resize", () => {
+            if (window.innerWidth >= 990) {
+                document.getElementById("nav").style.display = "block";
+                document.getElementById("header").style.height = "80px";
+            } else {
+                document.getElementById("nav").style.display = "none";
+            }
+        });
+    </script>
+    </header>
+
+    <div id="flex-container">
+        <div id="info">
+            <h1>Account</h1>
+            <ul>
+                <li><img src="../<%= user.image %>" alt=""></li>
+                <li>username: <%= user.username %></li>
+                <li>email: <%= user.email %></li>
+            </ul>
+
+            <form action="/user_api/log-out" method="GET">
+                <input type="submit" value="Log out"></input>
+            </form>
+
+            <form action="/user_api/delete-user" method="GET">
+                <input type="submit" value="Delete account"></input>
+            </form>
+
+            <button onclick="showEdit()">Edit Profile</button>
+        </div>
+
+        <div id="edit">
+            <form action="/user_api/edit-user" method="post" enctype="multipart/form-data">
+                <h1>Edit Profile</h1>
+                
+                <label for="file">Choose a profile picture</label>
+                    <input type="file" name="profilePicture" id="file"  accept=".jpg, .jpeg, .png"><br><br>
+                <label for="username">Username:</label>
+                    <input type="text" id="username" name="username"><br><br>
+                <label for="email">Email:</label>
+                    <input type="email" id="email" name="email"><br><br>
+                <label for="password">Current Password: </label>
+                    <input type="password" id="password" name="password" required><br><br>
+                <label for="npassword">New password: </label>
+                    <input type="password" id="npassword" name="npassword"><br><br>
+        
+                <input type="submit" value="Submit">
+                <h4>You will have to comfirm password before any changes.</h4>
+            </form>
+        </div>
+    </div>
+
+
+    <script>
+
+    const edit = document.getElementById("edit");
+    
+    function showEdit() {
+        if (edit.style.display === "block")
+            edit.style.display = "none";
+        else edit.style.display = "block";
+    }
+
+    </script>
+
+    <footer>
+        <div id="footer-overlay">
+            <div class="container">
+                <nav>
+                    &copy;2020 Valentin Popescu. All Rights Reserved.
+                </nav>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>post - <%= post.title %></title>
+    <base href="/">
+    <link rel="shortcut icon" href="../static/planet-express.png">
+    <link rel="stylesheet" href="../static/style/style_post.css" type="text/css">
+    
+</head>
+<body>
+    <header id="header">
+        <div id="header-overlay">
+            <div class="container">
+                <h2>Futurama</h2>
+                <div id="bars">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <nav id="nav">
+                    <ul>
+                        <li><a href="/en">Home</a></li>
+                        <li><a href="/en/forum">Forum</a></li>
+                        <li><a href="/en/account">Account</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <script>
+        let k = 0;
+        document.getElementById("bars").addEventListener("click", () => {
+            if (k == 0) {
+                document.getElementById("nav").style.display = "block";
+                document.getElementById("header").style.height = "fit-content";
+                k = 1;
+            } else {
+                document.getElementById("nav").style.display = "none";
+                document.getElementById("header").style.height = "80px";
+                k = 0;
+            }
+            console.log(k);
+        });
+
+        window.addEventListener("resize", () => {
+            if (window.innerWidth >= 990) {
+                document.getElementById("nav").style.display = "block";
+                document.getElementById("header").style.height = "80px";
+            } else {
+                document.getElementById("nav").style.display = "none";
+            }
+        });
+    </script>
+    </header>
+
+    <div class="container">
+        <div id="content">
+            <div id="post">
+                <h5 style="margin-bottom: 5px;">Section: <%= post.section %></h5>
+                <h2 style="margin-top: 5px;"><%= post.title %></h2>
+                             
+                <% if (post.media == undefined) { %>
+                    <p><%= post.content %></p>
+                <% } else { %>
+
+                    <% if (post.media.split('.').pop() == "mp4" || post.media.split('.').pop() == "gif") { %>
+                        <video src="../<%= post.media %>" controls></video>
+                    <% } else if (post.media.split('.').pop() == "png" || post.media.split('.').pop() == "jpg" || post.media.split('.').pop() == "jpeg") { %>
+                        <img src="../<%= post.media %>" alt="<%= post.media %>">
+                    <% } %>
+
+                <% } %>
+            </div>
+
+        
+            <form action="/comment_api/create-comment/?post=<%= post._id %>" method="POST" enctype="multipart/form-data">
+                <h3>Write a comment</h3>
+                <textarea name="content" id="text-comment" placeholder="Write comments...""></textarea>
+                <label for="file">Upload a file </label>
+                <input type="file" id="file" name="commentMedia">
+                <input type="submit" value="Post" class="addBtn">
+            </form>
+
+            <ul id="allComments">
+                <% if (comments.length) { %>
+                    <% comments.forEach(comment => { %>
+                        <div id="comment">
+                            <% if (comment.authorId == id) { %>
+                                <a id="x" href="/comment_api/delete-comment/?comment=<%= comment._id %>" title="Delete Comment">×</a>
+                            <% } %>
+
+                            <img src="../<%= comment.profilePicture %>" id="profile-picture" alt="">
+                            <strong><%= comment.author %></strong>
+                            
+                            <% if (comment.media == undefined) { %>
+                                <p><%= comment.content %></p>
+                            <% } else { %>
+            
+                                <% if (comment.media.split('.').pop() == "mp4" || comment.media.split('.').pop() == "gif") { %>
+                                    <video src="../<%= comment.media %>" controls></video>
+                                <% } else if (comment.media.split('.').pop() == "png" || comment.media.split('.').pop() == "jpg" || comment.media.split('.').pop() == "jpeg") { %>
+                                    <img src="../<%= comment.media %>" alt="<%= comment.media %>">
+                                <% } %>
+            
+                            <% } %>
+                        </div>
+                    <% }) %>
+                <% } else { %>
+                        <p>Be the first to comment</p>
+                    <% } %>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <div id="footer-overlay">
+            <div class="container">
+                <nav>
+                    &copy;2020 Valentin Popescu. All Rights Reserved.
+                </nav>
+            </div>
+        </div>
+    </footer>    
+</body>
+</html>

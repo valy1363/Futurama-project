@@ -1,0 +1,284 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    height: 100%;
+    color: black;
+    font-size: 20px;
+    margin: 0px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.container {
+    padding: 0 15px;
+    margin: auto;
+}
+
+/* header */
+
+header * {
+    margin: 0px;
+    color: black;
+}
+
+#header-overlay {
+    width: inherit;
+    height: inherit;
+    background-image: linear-gradient(to right, hsla(0, 0%, 0%, 0), rgba(255, 255, 255, 0.6));
+}
+
+header {
+    height: 80px;
+    width: 100%;
+    background-color: #bd574b;
+}
+
+header .container {
+    padding: 20px 0px;
+}
+
+header h2 {
+    display: block;
+    float: left;
+}
+
+header nav {
+    float: right;
+    font-size: 21px;
+}
+
+header nav2 {
+    text-align: center;
+    width: 100%;
+    height: 400px;
+}
+
+nav li {
+    float: left;
+    margin-right: 25px;
+    cursor: pointer;
+}
+
+/* section-one */
+
+h1 {
+    margin-bottom: 20px;
+    margin-top: 0px;
+}
+
+.section {
+    color: white;
+    margin: 10% 0% 10% 0%;
+}
+
+#back-ship {
+    background-image: url(../images/futurama-1581780002363-386.jpg);
+    background-position: 30% top;
+    width: 100%;
+    min-height: calc(100vh - 80px);
+    display: flex;
+}
+
+#black-overlay {
+    width: inherit;
+    height: inherit;
+    background-color: hsla(1, 0%, 0%, 0.6);
+    
+}
+
+#arrow {
+    transform: rotate(90deg) scale(3);
+    margin: 120px 0px;
+    cursor: pointer;
+    margin: 120px auto;
+    width: 20px;
+    height: 25px;
+}
+
+#arrow a {
+    color: white;
+}
+
+/* section-two */
+
+#section-two {
+    min-height: calc(100vh - 70px);
+}
+
+#section-two h1  {
+    padding: 20px 0;
+}
+
+.character {
+    width: 150px;
+    height: 230px;
+    border: black 2px solid;
+    border-radius: 5%;
+
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+}
+
+.one {
+    background-image: url(../images/Philip-J-Fry.jpg);
+}
+
+.two {
+    background-image: url(../images/bender.jpg);
+}
+
+.three {
+    background-image: url(../images/leela.jpg);
+}
+
+.four {
+    background-image: url(../images/amywong.jpg);
+    background-position-x: 37%;
+}
+
+.five {
+    background-image: url(../images/ProfessorFarnsworth.jpg);
+}
+
+.six {
+    background-image: url(../images/HermesConrad.jpg);
+    transform: scaleX(-1);
+}
+
+.seven {
+    background-image: url(../images/zapp-brannigan.jpg);
+    background-position-x: 28%;
+}
+
+.eight {
+    background-image: url(../images/Zoidberg.jpg);
+}
+
+#characters {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-row-gap: 40px;
+    grid-column-gap: 10%;
+}
+
+#char-overlay {
+    width: inherit;
+    height: inherit;
+    background-color: hsla(1, 0%, 0%, 0.4);
+    border-radius: 5%;
+}
+
+.character h3 {
+    margin: 0px;
+    padding: 80px 0px;
+    width: 100%;
+    color: white;
+}
+
+/* footer */
+
+footer {
+    font-size: 18px;
+    height: 70px;
+    width: 100%;
+    background-color: #bd574b;
+}
+
+#footer-overlay {
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to left, hsla(0, 0%, 0%, 0), rgba(255, 255, 255, 0.6));
+}
+
+footer nav {
+    padding: 25px 0 10px 0;
+    height: 30px;
+}
+
+/* global */
+
+@media screen and (max-width: 990px) {
+    #bars div {
+        background-color: black;
+        width: 30px;
+        height: 3px;
+        margin: 4px 0;
+    }
+
+    #bars {
+        float: right;
+        cursor: pointer;
+    }
+
+    header h2 {
+        float: left;
+        text-align: center;
+        margin-bottom: 30px;
+        margin-left: calc(50% - 52px);
+        margin-right: calc(50% - 37px - 52px);
+    }
+
+    header nav {
+        display: none;
+        float: none;
+        text-align: center;
+        width: 100%;
+        height: fit-content;
+    }
+
+    header nav li {
+        float: none;
+        margin-bottom: 20px;
+    }
+
+    #arrow {
+        display: none;
+    }
+
+    #characters {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    body {
+        font-size: 16px;
+    }
+
+    footer {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    #characters {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .character {
+        width: 120px;
+        height: 200px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+      width: 750px;
+    }
+  }
+  @media (min-width: 992px) {
+    .container {
+      width: 970px;
+    }
+  }
+  @media (min-width: 1200px) {
+    .container {
+      width: 1170px;
+    }
+  }
+
+* {
+    text-decoration: none;
+    list-style-type: none;
+}

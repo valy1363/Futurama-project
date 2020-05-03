@@ -1,0 +1,450 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    height: 100%;
+    color: black;
+    font-size: 20px;
+    margin: 0px;
+    overflow-x: hidden;
+}
+
+a {
+    color: black;
+}
+
+.container {
+    padding: 0 15px;
+    margin: auto;
+}
+
+/* header */
+
+header * {
+    margin: 0px;
+    color: black;
+}
+
+#header-overlay {
+    width: inherit;
+    height: inherit;
+    background-image: linear-gradient(to right, hsla(0, 0%, 0%, 0), rgba(255, 255, 255, 0.6));
+}
+
+header {
+    height: 80px;
+    width: 100%;
+    background-color: #bd574b;
+}
+
+header .container {
+    padding: 20px 0px;
+}
+
+header h2 {
+    display: block;
+    float: left;
+}
+
+header nav {
+    float: right;
+    font-size: 21px;
+}
+
+header nav2 {
+    text-align: center;
+    width: 100%;
+    height: 400px;
+}
+
+nav li {
+    float: left;
+    margin-right: 25px;
+    cursor: pointer;
+}
+
+#flex-container {
+    min-height: calc(100vh - 150px);
+    display: flex;
+}
+
+/*  Section list */
+
+#section-list {
+    height: fit-content;
+    width: 200px;
+    float: left;
+}
+
+#section-list h3 {
+    padding: 30px 0 40px 0;
+}
+
+#section-list ul {
+    overflow-y: hidden;
+    padding: 0px;
+}
+
+#section-list ul li {
+    cursor: pointer;
+    padding: 12px 22px 12px 30px;
+    background: #eee;
+    font-size: 18px;
+    transition: 0.2s;
+}
+
+#li {
+    position: relative;
+    min-height: 45px;
+}
+
+#x {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 12px 16px 12px 16px;
+    cursor: pointer;
+}
+
+#x:hover {
+    background-color: #f44336;
+    color: white;
+}
+
+#section-list ul li:hover {
+    background: #d9d9d9;
+}
+
+/* forum */
+
+#forum {
+    text-align: center;
+    height: fit-content;
+    width: 600px;
+}
+
+#forum p {
+    padding-left: 35px;
+}
+
+#post {
+    position: relative;
+    text-align: left;
+    margin: 100px;
+}
+
+img {
+    max-width: 400px;
+    height: auto;
+}
+
+video {
+    max-width: 400px;
+    height: auto;
+}
+
+#post #text {
+    padding: 10px;
+}
+
+#vote {
+    display: flex;
+    margin: 10px 0;
+}
+
+.up {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    background-image: url("../images/vote-icon.png");
+    background-size: contain;
+    margin: 5px;
+}
+
+#up-active {
+
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    background-image: url("../images/vote-icon-active.png");
+    background-size: contain;
+    margin: 5px;
+}
+
+.down {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    background-image: url("../images/vote-icon.png");
+    transform: rotate(180deg);
+    background-size: contain;
+    margin: 5px;
+}
+
+#down-active {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    background-image: url("../images/vote-icon-active.png");
+    transform: rotate(180deg);
+    background-size: contain;
+    margin: 5px;
+}
+
+#comments {
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    margin: 10px 0 0 40px;
+    background-image: url("../images/comment-icon.png");
+    background-size: contain;
+}
+
+#comments:hover {
+    background-image: url("../images/comment-icon-active.png");
+}
+
+/* comment section */
+
+#comment-section-overlay {
+    display: none;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#comment-section h3 {
+    margin: 18px 0;
+}
+
+#comment-section {
+    padding: 50px;
+    text-align: left;
+    margin: 7% auto 0px auto;
+    width: 450px;
+    height: 550px;
+    background-color: white;
+    position: relative;
+}
+
+#comment-section textarea {
+    resize: none;
+    width: 360px;
+    height: 60px;
+    float: left;
+}
+
+#comment-section img {
+    width: 300px;
+    height: auto;
+}
+
+/* right side */
+
+#right-side {
+    height: fit-content;
+    width: 25%;
+}
+
+#right-side h4 {
+    margin: 5px;
+}
+
+#right-side #section {
+    width: 150px;
+    padding: 10px;
+    float: left;
+}
+
+.addBtn {
+    padding: 12px;
+    width: fit-content;
+    background: #d9d9d9;
+    color: #555;
+    text-align: center;
+    cursor: pointer;
+    font-size: 0.70em;
+    border: none;
+}
+
+/* create post */
+
+#create-post {
+    margin-top: 100px;
+}
+
+#posting-overlay {
+    display: none;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#posting {
+    margin: 10% auto 0px auto;
+    width: 500px;
+    height: 600px;
+    background-color: white;
+    position: relative;
+}
+
+#posting form {
+    width: fit-content;
+    margin: auto;
+}
+
+#posting input {
+    padding: 10px;
+}
+
+#posting #title {
+    width: 300px;
+}
+
+#posting input[type=submit] {
+    display: block;
+}
+
+#posting #content {
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    resize: none;
+}
+
+#posting select {
+    width: 70%;
+    padding: 10px;
+    float: left;
+}
+
+/* footer */
+
+footer {
+    font-size: 18px;
+    height: 70px;
+    width: 100%;
+    background-color: #bd574b;
+}
+
+#footer-overlay {
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to left, hsla(0, 0%, 0%, 0), rgba(255, 255, 255, 0.6));
+}
+
+footer nav {
+    padding: 25px 0 10px 0;
+    height: 30px;
+}
+
+/* global */
+
+@media screen and (max-width: 990px) {
+    #flex-container {
+        flex-direction: column;
+    }
+
+    #right-side {
+        order: 1;
+        width: 300px;
+        margin: auto;
+    }
+
+    #create-post {
+        margin-top: 30px;
+    }
+
+    #section-list {
+        order: 2;
+        margin: auto;
+    }
+
+    #section-list h3 {
+        padding-bottom: 0px;
+    }
+    
+    #forum {
+        order: 3;
+        width: 300px;
+        margin: auto;
+    }
+
+    #forum #post {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    img, video {
+        width: 300px;
+        height: auto;
+    }
+
+    #bars div {
+        background-color: black;
+        width: 30px;
+        height: 3px;
+        margin: 4px 0;
+    }
+
+    #bars {
+        display: block;
+        float: right;
+        cursor: pointer;
+    }
+
+    header h2 {
+        float: left;
+        text-align: center;
+        margin-bottom: 30px;
+        margin-left: calc(50% - 52px);
+        margin-right: calc(50% - 37px - 52px);
+    }
+
+    header nav {
+        display: none;
+        float: none;
+        text-align: center;
+        width: 100%;
+        height: fit-content;
+    }
+
+    header nav li {
+        float: none;
+        margin-bottom: 20px;
+    }
+
+    body {
+        font-size: 16px;
+    }
+
+    footer {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+      width: 750px;
+    }
+  }
+  @media (min-width: 992px) {
+    .container {
+      width: 970px;
+    }
+  }
+  @media (min-width: 1200px) {
+    .container {
+      width: 1170px;
+    }
+  }
+
+* {
+    text-decoration: none;
+    list-style-type: none;
+}
