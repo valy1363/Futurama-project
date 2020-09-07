@@ -9,7 +9,6 @@ app.use(bodyparser.json());
 
 app.set("view engine", "ejs");
 
-app.set("views", __dirname + "/en");
 
 app.use("/uploads", express.static("uploads"));
 
