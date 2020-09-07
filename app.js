@@ -17,7 +17,6 @@ app.use("/uploads", express.static("uploads"));
 
 const mongoose = require("mongoose");
 mongoose.connect(process.env.MONGODB_URI || "mongodb+srv://valentin:abcd1234@cluster0-fsimv.mongodb.net/test?retryWrites=true&w=majority", {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: false });
-console.log(`uri mongodb ${process.env.MONGODB_URI}`);
 
 const user_api = require("./api/routes/user_api").route;
 app.use("/user_api", user_api);
