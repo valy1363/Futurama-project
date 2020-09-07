@@ -1,5 +1,5 @@
 # Futurama project
-This is a website containing a forum based on the TV series Futurama
+This is a fan base website featuring the TV-series Futurama
 
 ## Installation and setup
 
