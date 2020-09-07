@@ -89,7 +89,7 @@
                     <div id="section-list-header">
                         <h3>Section List</h3>
                         <ul id="myUL">
-                            <a href="/section_api/get-section/?section=all"><li style="padding: 12px; text-align: center;" id="allSection">Select all sections</li></a>
+                            <a href="/section_api/en/get-section/?section=all"><li style="padding: 12px; text-align: center;" id="allSection">Select all sections</li></a>
                             
                             <% if (getsection == "all") { %>
                                 <script>
@@ -99,12 +99,12 @@
                             
                             <% sections.forEach(section => { %>
                                 <div id="li">
-                                    <a href="/section_api/get-section/?section=<%= section.title %>">
+                                    <a href="/section_api/en/get-section/?section=<%= section.title %>">
                                         <li id="<%= section.title %>section"><%= section.title %></li>
                                     </a>
         
                                     <% if (section.author == id) { %>
-                                        <a id="x" href="/section_api/delete-section/?section=<%= section.title %>" title="Delete Section">×</a>
+                                        <a id="x" href="/section_api/en/delete-section/?section=<%= section.title %>" title="Delete Section">×</a>
                                     <% } %>
                                 </div>
         
@@ -169,7 +169,7 @@
             <div id="section-list">
                 <h3>Section List</h3>
                 <ul>
-                    <a href="/section_api/get-section/?section=all"><li id="allsection">Select all sections</li></a>
+                    <a href="/section_api/en/get-section/?section=all"><li id="allsection">Select all sections</li></a>
                     
                     <% if (getsection == "all") { %>
                         <script>
@@ -179,12 +179,12 @@
                     
                     <% sections.forEach(section => { %>
                         <div id="li" style="background-color: #eee;">
-                            <a href="/section_api/get-section/?section=<%= section.title %>">
+                            <a href="/section_api/en/get-section/?section=<%= section.title %>">
                                 <li id="section<%= section.title %>"><%= section.title %></li>
                             </a>
 
                             <% if (section.author == id) { %>
-                                <a id="x" href="/section_api/delete-section/?section=<%= section.title %>" title="Delete Section">×</a>
+                                <a id="x" href="/section_api/en/delete-section/?section=<%= section.title %>" title="Delete Section">×</a>
                             <% } %>
                         </div>
 
@@ -213,7 +213,7 @@
                     <div id="post">
                         <h4>Section: <%= post.section %></h4>
                         <% if (post.author == id) { %>
-                            <a id="x" href="/post_api/delete-post/?post=<%= post._id %>" style="padding: 6px 8px;" title="Delete Post">×</a>
+                            <a id="x" href="/post_api/en/delete-post/?post=<%= post._id %>" style="padding: 6px 8px;" title="Delete Post">×</a>
                         <% } %>
                         <h3><%= post.title %></h3>
 
@@ -234,9 +234,9 @@
                         <div id="controls">
                             <div id="numbers"></div>
                             <div id="vote">
-                                <a id="up-<%= post._id %>" class="up" href="/post_api/up/?post=<%= post._id %>"></a>
+                                <a id="up-<%= post._id %>" class="up" href="/post_api/en/up/?post=<%= post._id %>"></a>
                                 <div id="text"><%= post.likedBy.length - post.dislikedBy.length %> points</div>
-                                <a id="down-<%= post._id %>" class="down" href="/post_api/down/?post=<%= post._id %>"></a>
+                                <a id="down-<%= post._id %>" class="down" href="/post_api/en/down/?post=<%= post._id %>"></a>
                                 <a id="comments" href="/comment_api/en/get-post/?post=<%= post._id %>" target="_blank"></a>
                                 <div id="text"><%= post.nrComments %> comments</div>
                             </div>
