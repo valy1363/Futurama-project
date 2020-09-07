@@ -34,9 +34,9 @@ app.use("/comment_api", comment_api);
 
 const en_route = require("./api/routes/en_route");
 
-
+let language = "/en";
 app.get("/get-en", (req, res) => {
-    app.set("views", __dirname + "/en");
+    language = "/en";
     const page = req.query.page;
     if (page != undefined)
         res.redirect(`/${page}`);
@@ -44,12 +44,14 @@ app.get("/get-en", (req, res) => {
 });
 
 app.get("/get-ro", (req, res) => {
-    app.set("views", __dirname + "/ro");
+    language = "/ro";
     const page = req.query.page;
     if (page != undefined)
         res.redirect(`/${page}`);
     else res.redirect(`/`);
 });
+
+app.set("views", __dirname + language);
 
 app.use("/", en_route);
 app.use("/static", express.static(__dirname + "/static"));
