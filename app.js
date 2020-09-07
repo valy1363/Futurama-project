@@ -16,7 +16,7 @@ app.use("/uploads", express.static("uploads"));
 /* Database */
 
 const mongoose = require("mongoose");
-mongoose.connect(process.env.DB_URL || "mongodb+srv://valentin:<password>@cluster0-fsimv.mongodb.net/<dbname>?retryWrites=true&w=majority", {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: false });
+mongoose.connect("mongodb+srv://valentin:abcd1234@cluster0-fsimv.mongodb.net/test?retryWrites=true&w=majority", {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: false });
 
 const user_api = require("./api/routes/user_api").route;
 app.use("/user_api", user_api);
