@@ -53,4 +53,4 @@ app.get("/get-ro", (req, res) => {
 
 app.use("/", en_route);
 app.use("/static", express.static(__dirname + "/static"));
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
