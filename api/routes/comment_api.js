@@ -77,10 +77,16 @@ route.get("/delete-comment", (req, res) => {
     
 });
 
-route.get("/get-post", (req, res) => {
+route.get("/en/get-post", (req, res) => {
     const postID = req.query.post;
     module.exports = { postID };
-    res.redirect(`/get-post/${postID}`);
+    res.redirect(`/en/get-post/${postID}`);
+});
+
+route.get("/ro/get-post", (req, res) => {
+    const postID = req.query.post;
+    module.exports = { postID };
+    res.redirect(`/ro/get-post/${postID}`);
 });
 
 module.exports = { route };

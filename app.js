@@ -9,6 +9,7 @@ app.use(bodyparser.json());
 
 app.set("view engine", "ejs");
 
+app.set("views", __dirname + "/pages");
 
 app.use("/uploads", express.static("uploads"));
 
@@ -31,25 +32,8 @@ app.use("/comment_api", comment_api);
 
 /* Router */
 
-const en_route = require("./api/routes/en_route");
+const router = require("./api/routes/router");
 
-
-app.get("/get-en", (req, res) => {
-    app.set("views", __dirname + "/en");
-    const page = req.query.page;
-    if (page != undefined)
-        res.redirect(`/${page}`);
-    else res.redirect(`/`);
-});
-
-app.get("/get-ro", (req, res) => {
-    app.set("views", __dirname + "/ro");
-    const page = req.query.page;
-    if (page != undefined)
-        res.redirect(`/${page}`);
-    else res.redirect(`/`);
-});
-
-app.use("/", en_route);
+app.use("/", router);
 app.use("/static", express.static(__dirname + "/static"));
 app.listen(process.env.PORT || 3000);

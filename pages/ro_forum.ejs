@@ -19,11 +19,11 @@
                 </div>
                 <nav id="nav">
                     <ul>
-                        <li><a href="/get-en/?page=forum"><img src="/static/images/country-icon/en.png" name="en" style="width: 34px"></a></li>
+                        <li><a href="/en/forum"><img src="/static/images/country-icon/en.png" name="en" style="width: 34px"></a></li>
                         
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/forum">Forum</a></li>
-                        <li><a href="/account">Account</a></li>
+                        <li><a href="/ro">Home</a></li>
+                        <li><a href="/ro/forum">Forum</a></li>
+                        <li><a href="/ro/account">Account</a></li>
                     </ul>
                 </nav>
 
@@ -237,7 +237,7 @@
                                 <a id="up-<%= post._id %>" class="up" href="/post_api/up/?post=<%= post._id %>"></a>
                                 <div id="text"><%= post.likedBy.length - post.dislikedBy.length %> points</div>
                                 <a id="down-<%= post._id %>" class="down" href="/post_api/down/?post=<%= post._id %>"></a>
-                                <a id="comments" href="/comment_api/get-post/?post=<%= post._id %>" target="_blank"></a>
+                                <a id="comments" href="/comment_api/ro/get-post/?post=<%= post._id %>" target="_blank"></a>
                                 <div id="text"><%= post.nrComments %> comments</div>
                             </div>
                         </div>
