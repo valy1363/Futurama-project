@@ -71,7 +71,7 @@ nav li {
     width: 40vw;
 }
 
-img {
+#avatar {
     width: 150px;
     height: 150px;
     object-fit: cover;

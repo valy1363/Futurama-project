@@ -10,7 +10,7 @@ route.get("/", (req, res) => {
     res.render("index.ejs");
 });
 
-route.get("/forum", (req, res, next) => {
+route.get("/forum", (req, res) => {
     const cookieUserId = req.cookies.id;
 
     const sections = [];

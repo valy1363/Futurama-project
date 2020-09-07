@@ -38,7 +38,7 @@ route.post("/create-comment", upload.single("commentMedia"), (req, res) => {
                     });
 
                     comment.save().then(doc => {
-                        res.redirect(`/en/get-post/${req.query.post}`);
+                        res.redirect(`/get-post/${req.query.post}`);
                     });
                 }
                 else if (req.body.content && !req.file) {
@@ -51,7 +51,7 @@ route.post("/create-comment", upload.single("commentMedia"), (req, res) => {
                     });
 
                     comment.save().then(doc => {
-                        res.redirect("/en/get-post/${req.query.post}");
+                        res.redirect("/get-post/${req.query.post}");
                     });
                 }
                 else {
@@ -71,7 +71,7 @@ route.get("/delete-comment", (req, res) => {
         if (err)
             throw err;
     }).then(comment => {
-        res.redirect(`/en/get-post/${comment.post}`);
+        res.redirect(`/get-post/${comment.post}`);
     });
 
     
@@ -80,7 +80,7 @@ route.get("/delete-comment", (req, res) => {
 route.get("/get-post", (req, res) => {
     const postID = req.query.post;
     module.exports = { postID };
-    res.redirect(`/en/get-post/${postID}`);
+    res.redirect(`/get-post/${postID}`);
 });
 
 module.exports = { route };

@@ -33,7 +33,7 @@ route.post("/create-post", upload.single("postMedia"), (req, res) => {
             });
 
             post.save().then(() => {
-                res.redirect("/en/forum");
+                res.redirect("/forum");
             });
         }
         else if (req.body.content && !req.file) {
@@ -45,7 +45,7 @@ route.post("/create-post", upload.single("postMedia"), (req, res) => {
             });
 
             post.save().then(doc => {
-                res.redirect("/en/forum");
+                res.redirect("/forum");
             });
         }
         else {
@@ -63,7 +63,7 @@ route.get("/delete-post", (req, res) => {
             Comment.remove({ post: post._id }, err => {
                 if (err)
                     throw err;
-                res.redirect("/en/forum");
+                res.redirect("/forum");
             });
             
         });
@@ -85,12 +85,12 @@ route.get("/up", (req, res) => {
             
             if (found == 1)
                 Post.findOneAndUpdate({ _id: req.query.post }, { $pull: { likedBy: req.cookies.id } }, (err, doc) => {
-                    res.redirect("/en/forum");
+                    res.redirect("/forum");
                 });
             
             else
                 Post.findOneAndUpdate({ _id: req.query.post }, { $push: { likedBy: req.cookies.id } }, (err, doc) => {
-                    res.redirect("/en/forum");
+                    res.redirect("/forum");
                 });
         });
     }
@@ -111,12 +111,12 @@ route.get("/down", (req, res) => {
                 
                 if (found == 1)
                     Post.findOneAndUpdate({ _id: req.query.post }, { $pull: { dislikedBy: req.cookies.id } }, (err, doc) => {
-                        res.redirect("/en/forum");
+                        res.redirect("/forum");
                     });
                 
                 else
                     Post.findOneAndUpdate({ _id: req.query.post }, { $push: { dislikedBy: req.cookies.id } }, (err, doc) => {
-                        res.redirect("/en/forum");
+                        res.redirect("/forum");
                     });
         });
     }

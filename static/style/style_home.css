@@ -58,6 +58,7 @@ header nav2 {
 nav li {
     float: left;
     margin-right: 25px;
+    margin-top: 10px;
     cursor: pointer;
 }
 
