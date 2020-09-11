@@ -480,14 +480,14 @@ footer nav {
         background-color: black;
         width: 30px;
         height: 3px;
-        margin: 4px;
+        margin: 4px 0;
     }
 
     #bars {
         display: block;
         float: right;
         cursor: pointer;
-        margin: 4px 15px 4px 0;
+        margin-right: 15px;
     }
 
     header h2 {
