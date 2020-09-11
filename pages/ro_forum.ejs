@@ -21,24 +21,24 @@
                     <ul>
                         <li><a href="/en/forum"><img src="/static/images/country-icon/en.png" name="en" style="width: 34px"></a></li>
                         
-                        <li><a href="/ro">Home</a></li>
+                        <li><a href="/ro">Acasa</a></li>
                         <li><a href="/ro/forum">Forum</a></li>
-                        <li><a href="/ro/account">Account</a></li>
+                        <li><a href="/ro/account">Contul meu</a></li>
                     </ul>
                 </nav>
 
                 <div id="right-side-header">
-                    <h4>Add section</h4>
+                    <h4>Adauga sectiune</h4>
     
                     <form action="/section_api/create-section" method="POST">
                         <label for="section">
-                            <input type="text" id="section" placeholder="Section Name" name="section" required>
+                            <input type="text" id="section" placeholder="Numele sectiunii" name="section" required>
                         </label>
                         <input type="submit" class="addBtn" value="Add">
                     </form>
     
                     <div id="create-post">
-                        <h4 style="display: inline-block;">Create post  <span id="upload" class="addBtn" onclick="showPostHeader()">Upload</span></h4>
+                        <h4 style="display: inline-block;">Creare post <span id="upload" class="addBtn" onclick="showPostHeader()">Upload</span></h4>
                         
     
                         <div id="posting_overlay_header">
@@ -47,14 +47,14 @@
                                 
                                 <form action="/post_api/create-post" method="POST" enctype="multipart/form-data">
                                     
-                                    <h3>Upload a Post</h3>
+                                    <h3>Creaza o postare</h3>
                                     <label for="title">
                                         <input type="text" id="title" placeholder="Title" name="title" required><br><br>
                                     </label>
                                     <label for="content">
                                         <textarea type="textarea" id="content" placeholder="Content" name="content"></textarea><br><br>
                                     </label>
-                                    <label for="media">Upload a file </label>
+                                    <label for="media">Adauga un atasament </label>
                                         <input type="file" id="media" name="postMedia"><br><br>
                                     
                                     <label for="sections">Select a section</label>
@@ -86,9 +86,9 @@
 
                 <div id="flex-container-header"></div>
                     <div id="section-list-header">
-                        <h3>Section List</h3>
+                        <h3>Lista sectiunilor</h3>
                         <ul id="myUL">
-                            <a href="/section_api/ro/get-section/?section=all"><li style="padding: 12px; text-align: center;" id="allSection">Select all sections</li></a>
+                            <a href="/section_api/ro/get-section/?section=all"><li style="padding: 12px; text-align: center;" id="allSection">Selecteaza toate sectiunile</li></a>
                             
                             <% if (getsection == "all") { %>
                                 <script>
@@ -151,9 +151,9 @@
     
     <div class="container">
             <div id="section-list">
-                <h3>Section List</h3>
+                <h3>Lista sectiunilor</h3>
                 <ul>
-                    <a href="/section_api/ro/get-section/?section=all"><li id="allsection">Select all sections</li></a>
+                    <a href="/section_api/ro/get-section/?section=all"><li id="allsection">Selecteaza toate sectiunile</li></a>
                     
                     <% if (getsection == "all") { %>
                         <script>
@@ -187,15 +187,15 @@
             
 
             <div id="forum">
-                <h3>Forum disscusing topics about Futurama</h3>
+                <h3>Forum in care se discuta subiecte despre Futurama</h3>
                 
                 <% if (posts == undefined || posts.length == 0) { %>
-                    <p>There is no post within this section</p>
+                    <p>Nu exista postari pentru aceasta sectiune</p>
                 <% } %>
                 
                 <% posts.forEach(post => { %>
                     <div id="post">
-                        <h4>Section: <%= post.section %></h4>
+                        <h4>Sectiune: <%= post.section %></h4>
                         <% if (post.author == id) { %>
                             <a id="x" href="/post_api/ro/delete-post/?post=<%= post._id %>" style="padding: 6px 8px;" title="Delete Post">×</a>
                         <% } %>
@@ -248,17 +248,17 @@
             </div>
 
             <div id="right-side">
-                <h4>Add section</h4>
+                <h4>Adauga o sectiune</h4>
 
                 <form action="/section_api/create-section" method="POST">
                     <label for="section">
                         <input type="text" id="section" placeholder="Section Name" name="section" required>
                     </label>
-                    <input type="submit" class="addBtn" value="Add">
+                    <input type="submit" class="addBtn" value="Adauga">
                 </form>
 
                 <div id="create-post">
-                    <h4 style="display: inline-block;">Create post  <span id="upload" class="addBtn" onclick="showPost()">Upload</span></h4>
+                    <h4 style="display: inline-block;">Creare post <span id="upload" class="addBtn" onclick="showPost()">Upload</span></h4>
                     
                     
 
@@ -269,14 +269,14 @@
                             
                             <form action="/post_api/create-post" method="POST" enctype="multipart/form-data">
                                 
-                                <h3>Upload a Post</h3>
+                                <h3>Creaza o postare</h3>
                                 <label for="title">
                                     <input type="text" id="title" placeholder="Title" name="title" required><br><br>
                                 </label>
                                 <label for="content">
                                     <textarea type="textarea" id="content" placeholder="Content" name="content"></textarea><br><br>
                                 </label>
-                                <label for="media">Upload a file </label>
+                                <label for="media">Adauga un atasament </label>
                                     <input type="file" id="media" name="postMedia"><br><br>
                                 
                                 <label for="sections">Select a section</label>
@@ -312,7 +312,7 @@
         <div id="footer-overlay">
             <div class="container">
                 <nav>
-                    &copy;2020 Valentin Popescu. All Rights Reserved.
+                    &copy;2020 Valentin Popescu. Toate drepturile rezervate.
                 </nav>
             </div>
         </div>

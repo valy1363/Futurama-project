@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Futurama | Log in</title>
+    <title>Futurama | Logare</title>
     <link rel="shortcut icon" href="../static/planet-express.png">
     <link rel="stylesheet" href="../static/style/style_login.css">
 </head>
@@ -21,9 +21,9 @@
                     <ul>
                         <li><a href="/en/account"><img src="/static/images/country-icon/en.png" name="en" style="width: 34px"></a></li>
                         
-                        <li><a href="/ro">Home</a></li>
+                        <li><a href="/ro">Acasa</a></li>
                         <li><a href="/ro/forum">Forum</a></li>
-                        <li><a href="/ro/account">Account</a></li>
+                        <li><a href="/ro/account">Contul meu</a></li>
                     </ul>
                 </nav>
             </div>
@@ -49,15 +49,15 @@
     
     <div id="flex-container">
         <div id="info">
-            <h1>Create an account</h1>
+            <h1>Creaza un cont</h1>
             <form action="/user_api/sign-up" method="post">
-                <label for="username">Username:</label>
+                <label for="username">Nume de utilizator:</label>
                     <input type="text" id="username" name="username" required><br><br>
                 <label for="email">Email:</label>
                     <input type="email" id="email" name="email" required><br><br><!--  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$ -->
-                <label for="password">Password: </label>
+                <label for="password">Parola: </label>
                     <input type="password" id="password" name="password" required><br><br>
-                <label for="cpassword">Confirm password: </label>
+                <label for="cpassword">Confirma parola: </label>
                     <input type="password" id="cpassword" name="cpassword" required><br><br>
 
                 <input type="submit" value="Submit" class="addBtn">
@@ -65,13 +65,13 @@
         </div>
 
         <div id="register">
-            <h1>Register</h1>
+            <h1>Inregistrare</h1>
             <form action="/user_api/log-in" method="post">
-                <label for="username_">Username:</label>
+                <label for="username_">Nume de utilizator:</label>
                     <input type="text" id="username_" name="username_" required><br><br>
                 <label for="email_">Email:</label>
                     <input type="email" id="email_" name="email_" required><br><br>
-                <label for="password_">Password: </label>
+                <label for="password_">Parola: </label>
                     <input type="password" id="password_" name="password_" required><br><br>
 
                 <input type="submit" value="Submit" class="addBtn">
@@ -83,7 +83,7 @@
         <div id="footer-overlay">
             <div class="container">
                 <nav>
-                    &copy;2020 Valentin Popescu. All Rights Reserved.
+                    &copy;2020 Valentin Popescu. Toate drepturile rezervate.
                 </nav>
             </div>
         </div>

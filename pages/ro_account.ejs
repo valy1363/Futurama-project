@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Futurama | Account</title>
+    <title>Futurama | Contul meu</title>
     <link rel="stylesheet" href="../static/style/style_account.css">
     <link rel="shortcut icon" href="../static/planet-express.png">
 </head>
@@ -22,9 +22,9 @@
                     <ul>
                         <li><a href="/en/account"><img src="/static/images/country-icon/en.png" name="en" style="width: 34px"></a></li>
 
-                        <li><a href="/ro">Home</a></li>
+                        <li><a href="/ro">Acasa</a></li>
                         <li><a href="/ro/forum">Forum</a></li>
-                        <li><a href="/ro/account">Account</a></li>
+                        <li><a href="/ro/account">Contul meu</a></li>
                     </ul>
                 </nav>
             </div>
@@ -50,41 +50,41 @@
 
     <div id="flex-container">
         <div id="info">
-            <h1>Account</h1>
+            <h1>Contul meu</h1>
             <ul>
                 <li><img src="../<%= user.image %>" alt="" id="avatar"></li>
-                <li>username: <%= user.username %></li>
+                <li>nume de utilizator: <%= user.username %></li>
                 <li>email: <%= user.email %></li>
             </ul>
 
             <form action="/user_api/log-out" method="GET">
-                <input type="submit" value="Log out"></input>
+                <input type="submit" value="Deconectare"></input>
             </form>
 
             <form action="/user_api/delete-user" method="GET">
-                <input type="submit" value="Delete account"></input>
+                <input type="submit" value="Stergere cont"></input>
             </form>
 
-            <button onclick="showEdit()">Edit Profile</button>
+            <button onclick="showEdit()">Editare Profil</button>
         </div>
 
         <div id="edit">
             <form action="/user_api/edit-user" method="post" enctype="multipart/form-data">
-                <h1>Edit Profile</h1>
+                <h1>Editare Profil</h1>
                 
-                <label for="file">Choose a profile picture</label>
+                <label for="file">Alege o imagine de profil</label>
                     <input type="file" name="profilePicture" id="file"  accept=".jpg, .jpeg, .png"><br><br>
-                <label for="username">Username:</label>
+                <label for="username">Nume de utilizator:</label>
                     <input type="text" id="username" name="username"><br><br>
                 <label for="email">Email:</label>
                     <input type="email" id="email" name="email"><br><br>
-                <label for="password">Current Password: </label>
+                <label for="password">Parola curenta: </label>
                     <input type="password" id="password" name="password" required><br><br>
-                <label for="npassword">New password: </label>
+                <label for="npassword">Parola noua: </label>
                     <input type="password" id="npassword" name="npassword"><br><br>
         
                 <input type="submit" value="Submit">
-                <h4>You will have to comfirm password before any changes.</h4>
+                <h4>Pentru orice schimbare va trebui sa introduci parola actuala.</h4>
             </form>
         </div>
     </div>
@@ -106,7 +106,7 @@
         <div id="footer-overlay">
             <div class="container">
                 <nav>
-                    &copy;2020 Valentin Popescu. All Rights Reserved.
+                    &copy;2020 Valentin Popescu. Toate drepturile rezervate.
                 </nav>
             </div>
         </div>
