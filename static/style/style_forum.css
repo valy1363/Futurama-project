@@ -535,6 +535,28 @@ footer nav {
     }
   }
 
+@media (max-width: 600px) {
+    #posting {
+        width: 75vw;
+        height: 85vh;
+        margin: auto;
+        margin-top: 10%;
+        padding: 10px;
+    }
+
+    #posting #title {
+        width: 50vw;
+    }
+    
+    #posting #content {
+        width: 60vw;
+    }
+
+    #posting .addBtn {
+        margin-top: 6px;
+    }
+}
+
 * {
     text-decoration: none;
     list-style-type: none;
