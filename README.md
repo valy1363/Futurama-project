@@ -8,3 +8,4 @@ This is a fan base website featuring the TV-series Futurama
 * type in the console ```npm run dev```
 * open a browser and search for *localhost:3000*
 
+In order to access the database localy, you will have to connect to Mongodb Atlas
