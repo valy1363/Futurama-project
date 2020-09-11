@@ -463,6 +463,7 @@ footer nav {
     #forum {
         order: 3;
         width: 300px;
+        margin: 90px auto 0 auto;
     }
 
     #forum #post {
@@ -479,7 +480,7 @@ footer nav {
         background-color: black;
         width: 30px;
         height: 3px;
-        margin: 4px 0;
+        margin: 4px 10px 4px 0;
     }
 
     #bars {
