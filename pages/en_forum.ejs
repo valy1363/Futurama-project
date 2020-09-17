@@ -195,6 +195,7 @@
                     <p>There is no post within this section</p>
                 <% } %>
                 
+                <% posts.reverse(); %>
                 <% posts.forEach(post => { %>
                     <div id="post">
                         <h4>Section: <%= post.section %></h4>
@@ -252,7 +253,7 @@
             <div id="right-side">
                 <h4>Add section</h4>
 
-                <form action="/section_api/create-section" method="POST">
+                <form action="/section_api/en/create-section" method="POST">
                     <label for="section">
                         <input type="text" id="section" placeholder="Section Name" name="section" required>
                     </label>
@@ -269,7 +270,7 @@
                             <div style="float: right;" id="x" onclick="removePost()">×</div>
                             <div style="width: 100%; height: 70px; float: left"></div>
                             
-                            <form action="/post_api/create-post" method="POST" enctype="multipart/form-data">
+                            <form action="/post_api/en/create-post" method="POST" enctype="multipart/form-data">
                                 
                                 <h3>Upload a Post</h3>
                                 <label for="title">
