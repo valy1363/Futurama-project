@@ -96,6 +96,15 @@ footer nav {
 
 @media screen and (max-width: 990px) {
 
+    h3 {
+        display: none;
+    }
+
+    canvas {
+        width: 320px;
+        height: 568px;
+    }
+
     #bars div {
         background-color: black;
         width: 30px;
