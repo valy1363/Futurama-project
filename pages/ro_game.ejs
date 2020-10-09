@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game | Futurama</title>
+    <link rel="stylesheet" href="../static/style/style_game.css">
+</head>
+<body style="margin: 0; overflow: hidden;">
+
+    <header id="header">
+        <div id="header-overlay">
+            <div class="container" style="height: 40px;">
+                <h2>Futurama</h2>
+                <div id="bars">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <nav id="nav">
+                    <ul>
+                        <li><a href="/en/game"><img src="/static/images/country-icon/en.png" name="en" style="width: 34px"></a></li>
+                        
+                        <li><a href="/ro">Home</a></li>
+                        <li><a href="/ro/forum">Forum</a></li>
+                        <li><a href="/ro/account">Account</a></li>
+                        <li><a href="/ro/game">Game</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+        </div>
+
+        <script>
+        let k = 0;
+        document.getElementById("bars").addEventListener("click", () => {
+            if (k == 0) {
+                document.getElementById("nav").style.display = "block";
+                document.getElementById("header").style.height = "fit-content";
+                document.getElementById("header").style.height = "100vh";
+                document.getElementById("header-overlay").style.minHeight = "150vh"
+                document.getElementById("header").style.overflow = "auto";
+                k = 1;
+            } else {
+                document.getElementById("nav").style.display = "none";             
+                document.getElementById("header").style.height = "80px";
+                document.getElementById("header").style.overflow = "hidden";
+                k = 0;
+            }
+        });
+        
+        </script>
+    </header>
+
+    <canvas width="400" height="710" ></canvas>
+    <h3>Score: <div id="score"></div></h3>
+
+    <footer>
+        <div id="footer-overlay">
+            <div class="container">
+                <nav>
+                    &copy;2020 Valentin Popescu. Toate drepturile rezervate.
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../static/game/script.js"></script>
+</body>
+</html>

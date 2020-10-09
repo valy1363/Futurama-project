@@ -204,4 +204,12 @@ route.get("/ro/get-post/:post", (req, res) => {
     });
 });
 
+route.get("/en/game", (req, res) => {
+    res.render("en_game.ejs");
+});
+
+route.get("/ro/game", (req, res) => {
+    res.render("ro_game.ejs");
+});
+
 module.exports = route;
