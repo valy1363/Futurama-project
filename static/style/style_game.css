@@ -103,6 +103,7 @@ footer nav {
     canvas {
         width: 320px;
         height: 568px;
+        margin: 0;
     }
 
     #bars div {
