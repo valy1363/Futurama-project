@@ -42,6 +42,17 @@ window.addEventListener("keyup", (event) => {
     }
 });
 
+canvas.addEventListener("touchstart", (event) => {
+    if (event.changedTouches[0].clientX < canvas.width / 2)
+        key.left = 1;
+    else key.right = 1;
+});
+canvas.addEventListener("touchend", (event) => {
+    if (event.changedTouches[0].clientX < canvas.width / 2)
+        key.left = 0;
+    else key.right = 0;
+});
+
 let start = 0;
 canvas.addEventListener("click", () => {
     if (!over)

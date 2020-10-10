@@ -94,15 +94,28 @@ footer nav {
     height: 30px;
 }
 
+@media screen and (max-width: 400px) {
+
+    canvas {
+        width: 100vw;
+        height: calc(100vh - 80px);
+    }
+
+    footer {
+        display: none;
+    }
+    
+}
+
 @media screen and (max-width: 990px) {
 
     h3 {
-        display: none;
+        top: 70px;
+        left: 100px;
+        color: white;
     }
 
     canvas {
-        width: 320px;
-        height: 568px;
         margin: 0;
     }
 
