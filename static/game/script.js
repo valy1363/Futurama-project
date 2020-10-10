@@ -123,9 +123,9 @@ function Ship() {
         ctx.drawImage(ship_image, ship_x, canvas.height - 175 - 20, 100, 175);
         let speed = 7;
         if (key.left && ship_x > speed && start)
-            ship_x -= speed;
+            ship_x -= speed * delta_time;
         if (key.right && ship_x < canvas.width - 100 - speed && start)
-            ship_x += speed;
+            ship_x += speed * delta_time;
     }
 };
 let ship = new Ship();
@@ -180,7 +180,7 @@ function Projectile() {
             target = 0;
         }
 
-        projectile_y -= 5;
+        projectile_y -= 5 * delta_time;
     }
     
 }
@@ -267,7 +267,7 @@ function Nimbus() {
             this.projectile_spawn(canvas.width / 2);
 
             if (nimbus_projectile_y <= canvas.height) {
-                nimbus_projectile_y += 5;
+                nimbus_projectile_y += 5 * delta_time;
             }
             else {
                 if (index == 0)
@@ -297,14 +297,14 @@ function Nimbus() {
             nimbus_projectile.update();
         
         if (nimbus_y <= -50)
-            nimbus_y += 5;
+            nimbus_y += 5 * delta_time;
 
         if (projectile_y <= nimbus_y + 255 && projectile_x >= 100 && projectile_x <= 300) {
             target = 1;
         }
 
         if (damage >= 15 && nimbus_x > -200) {
-            nimbus_x -= 5;
+            nimbus_x -= 5 * delta_time;
         }
 
         if (damage >= 15 && nimbus_x <= -200) {
@@ -343,7 +343,7 @@ function Asteroid() {
         this.asteroid_spawn(x[index2] - 50, y2 - 50);
 
         if (y1 + 50 <= canvas.height + 100)
-            y1 += 7;
+            y1 += 7 * delta_time;
         else {
             y1 = -100;
             index = Math.floor(Math.random() * 3);
@@ -353,7 +353,7 @@ function Asteroid() {
         }
         
         if (y2 + 50 <= canvas.height + 100)
-            y2 += 7;
+            y2 += 7 * delta_time;
         else {
             y2 = -100;
             index2 = Math.floor(Math.random() * 3);
@@ -412,7 +412,7 @@ function Niblonian() {
         ctx.ellipse(nib_projectile_x, nib_projectile_y, 75 * 2 / 3, 20 * 1 / 3, 0, 0, Math.PI * 2);
         ctx.stroke();
         
-        nib_projectile_y += 3;
+        nib_projectile_y += 3 * delta_time;
 
         if (nib_projectile_y > canvas.height + 40) {
             nib_projectile_y = 150;
@@ -438,7 +438,7 @@ function Niblonian() {
         else k = 1;
         
         if (k)
-            nib_x += speed;
+            nib_x += speed * delta_time;
         if (nib_x >= canvas.width - 70)
             speed *= -1;
         if (nib_x <= 70)
@@ -493,8 +493,8 @@ function Omocronian() {
         if (!damaged5)
             ctx.drawImage(omc, omc_x[index1] - 60, omc_y[1] - 200);
 
-        omc_y[0] += 7;
-        omc_y[1] += 7;
+        omc_y[0] += 7 * delta_time;
+        omc_y[1] += 7 * delta_time;
         
         if (omc_y[0] >= canvas.height + 200) {
             omc_y[0] = - 100;
@@ -613,9 +613,14 @@ let press_start = () => {
 };
 
 let score = 0;
-let animate = () => {
+let old_time = 0;
+let delta_time;
+let animate = (time) => {
     requestAnimationFrame(animate);
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    delta_time = (time - old_time) / 16;
+    old_time = time;
 
     for (let i = 0; i < arrayCircle.length; i++) {
         arrayCircle[i].update();
