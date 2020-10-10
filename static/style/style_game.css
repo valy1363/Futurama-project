@@ -100,10 +100,6 @@ footer nav {
 
 @media screen and (max-width: 400px) {
 
-    body {
-        overflow: hidden;
-    }
-
     canvas {
         width: 100vw;
         height: calc(100vh - 80px);
