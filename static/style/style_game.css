@@ -61,17 +61,17 @@ nav li {
 
 body {
     text-align: center;
-    position: relative;
 }
 
 canvas {
     margin: calc((100vh - 710px  - 70px - 80px) / 2);
+    position: relative;
 }
 
 h3 {
     position: absolute;
-    top: calc((100vh - 750px) / 2);
-    right: calc((100vw - 650px) / 2);
+    top: 200px;
+    right: 20%;
 }
 
 /* footer */
@@ -94,7 +94,15 @@ footer nav {
     height: 30px;
 }
 
+* {
+    margin: 0;
+}
+
 @media screen and (max-width: 400px) {
+
+    body {
+        overflow: hidden;
+    }
 
     canvas {
         width: 100vw;
@@ -110,7 +118,7 @@ footer nav {
 @media screen and (max-width: 990px) {
 
     h3 {
-        top: 70px;
+        top: 90px;
         left: 100px;
         color: white;
     }
