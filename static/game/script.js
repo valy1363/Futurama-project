@@ -221,19 +221,18 @@ let game_over = () => {
 }
 
 canvas.addEventListener("click", (event) => {
-    if (window.innerWidth < 400 || innerHeight < 710) {
+    if (window.innerWidth < 400 || window.innerHeight < 710) {
         if (event.clientX >= canvas.width / 2 - 110 - 20 && event.clientX <= canvas.width / 2 + 110 - 60 && event.clientY >= canvas.height / 2 + 20 - 50 && event.clientY <= canvas.height / 2 + 80 - 60 && over) {
             start = 0;
             over = 0;
         }
     }
-    else
 
-    if (event.clientX >= canvas.width / 2 - 110 && event.clientX <= canvas.width / 2 + 110 && event.clientY >= canvas.height / 2 + 20 && event.clientY <= canvas.height / 2 + 80 && over) {
+    if (event.offsetX >= canvas.width / 2 - 110 && event.offsetX <= canvas.width / 2 + 110 && event.offsetY >= canvas.height / 2 + 20 && event.offsetY <= canvas.height / 2 + 80 && over) {
         start = 0;
         over = 0;
+        
     }
-
     
 });
 
