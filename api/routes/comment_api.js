@@ -23,7 +23,7 @@ const User = require("../Schimas/user_schema");
 route.post("/en/create-comment", upload.single("commentMedia"), (req, res) => {
 
     if (!req.cookies.id)
-        res.json("you need an account to create a comment")
+        res.send('<p>Cannot create comment without an account</p><input type="button" value="Back" onclick="history.back()">');
     else {
         Post.findByIdAndUpdate({ _id: req.query.post }, { $inc: { nrComments: 1 } }).then(() => {
             User.findOne({ _id: req.cookies.id }).then(user => {
@@ -55,7 +55,7 @@ route.post("/en/create-comment", upload.single("commentMedia"), (req, res) => {
                     });
                 }
                 else {
-                    res.json("comment with no content");
+                    res.send('<p>Comment with no content</p><input type="button" value="Back" onclick="history.back()">');
                 }
             });
 
@@ -69,7 +69,7 @@ route.post("/en/create-comment", upload.single("commentMedia"), (req, res) => {
 route.post("/ro/create-comment", upload.single("commentMedia"), (req, res) => {
 
     if (!req.cookies.id)
-        res.json("you need an account to create a comment")
+        res.send('<p>Nu poti creea un comentariu fara cont</p><input type="button" value="Back" onclick="history.back()">');
     else {
         Post.findByIdAndUpdate({ _id: req.query.post }, { $inc: { nrComments: 1 } }).then(() => {
             User.findOne({ _id: req.cookies.id }).then(user => {
@@ -101,7 +101,7 @@ route.post("/ro/create-comment", upload.single("commentMedia"), (req, res) => {
                     });
                 }
                 else {
-                    res.json("comment with no content");
+                    res.send('<p>Contentariu fara continut</p><input type="button" value="Back" onclick="history.back()">');
                 }
             });
 

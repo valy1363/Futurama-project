@@ -3,7 +3,6 @@ const route = express.Router();
 
 const Section = require("../Schimas/section_schema");
 const Post = require("../Schimas/post_schema");
-const Comment = require("../Schimas/comment_schema");
 
 
 route.post("/en/create-section", (req, res) => {
@@ -16,6 +15,9 @@ route.post("/en/create-section", (req, res) => {
         section.save().then(() => {
             res.redirect("/en/forum");
         });
+    }
+    else {
+        res.send('<p>Cannot create a section without an account</p><input type="button" value="Back" onclick="history.back()">');
     }
 });
 
@@ -30,9 +32,12 @@ route.post("/ro/create-section", (req, res) => {
             res.redirect("/ro/forum");
         });
     }
+    else {
+        res.send('<p>Nu poti creea o sectiune fara cont</p><input type="button" value="Back" onclick="history.back()">');
+    }
 });
 
-route.get("/enget-section", (req, res) => {
+route.get("/en/get-section", (req, res) => {
     let section = req.query.section;
     module.exports = { section };
     res.redirect("/en/forum");

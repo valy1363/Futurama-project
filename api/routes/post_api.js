@@ -21,7 +21,7 @@ const storage = multer.diskStorage({
 
 route.post("/en/create-post", upload.single("postMedia"), (req, res) => {
     if (!req.cookies.id)
-        res.json("you need an account to create a comment")
+        res.send('<p>Cannot create a post without an account</p><input type="button" value="Back" onclick="history.back()">');
     else {
         if (req.file) {
             let post = new Post({
@@ -49,14 +49,14 @@ route.post("/en/create-post", upload.single("postMedia"), (req, res) => {
             });
         }
         else {
-            res.json("comment with no content");
+            res.send('<p>Post with no content</p><input type="button" value="Back" onclick="history.back()">');
         }
     }
 });
 
 route.post("/ro/create-post", upload.single("postMedia"), (req, res) => {
     if (!req.cookies.id)
-        res.json("you need an account to create a comment")
+        res.send('<p>Nu poti creea o postare fara cont</p><input type="button" value="Back" onclick="history.back()">');
     else {
         if (req.file) {
             let post = new Post({
@@ -84,7 +84,7 @@ route.post("/ro/create-post", upload.single("postMedia"), (req, res) => {
             });
         }
         else {
-            res.json("comment with no content");
+            res.send('<p>Postere fara continut</p><input type="button" value="Back" onclick="history.back()">');
         }
     }
 });
