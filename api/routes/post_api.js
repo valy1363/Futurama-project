@@ -44,7 +44,7 @@ route.post("/en/create-post", upload.single("postMedia"), (req, res) => {
                 author: req.cookies.id
             });
 
-            post.save().then(doc => {
+            post.save().then(() => {
                 res.redirect("/en/forum");
             });
         }
@@ -79,7 +79,7 @@ route.post("/ro/create-post", upload.single("postMedia"), (req, res) => {
                 author: req.cookies.id
             });
 
-            post.save().then(doc => {
+            post.save().then(() => {
                 res.redirect("/ro/forum");
             });
         }
