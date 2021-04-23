@@ -66,7 +66,7 @@ route.get("/en/forum", (req, res) => {
                         nrComments = doc.length;
                     });
                 });
-
+                
                 res.render("en_forum.ejs", { posts: posts, sections: sections, id: cookieUserId, getsection: getsection, nrComments: nrComments });
             });
         }
