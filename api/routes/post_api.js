@@ -145,6 +145,9 @@ route.get("/en/up", (req, res) => {
                 });
         });
     }
+    else {
+        res.send('<p>Cannot like without an account</p><input type="button" value="Back" onclick="history.back()">');
+    }
 });
 
 route.get("/ro/up", (req, res) => {
@@ -170,6 +173,9 @@ route.get("/ro/up", (req, res) => {
                     res.redirect("/ro/forum");
                 });
         });
+    }
+    else {
+        res.send('<p>Nu poti aprecia o postare fara cont</p><input type="button" value="Back" onclick="history.back()">');
     }
 });
 
@@ -197,6 +203,9 @@ route.get("/en/down", (req, res) => {
                     });
         });
     }
+    else {
+        res.send('<p>Cannot dislike without an account</p><input type="button" value="Back" onclick="history.back()">');
+    }
 });
 
 route.get("/ro/down", (req, res) => {
@@ -222,6 +231,9 @@ route.get("/ro/down", (req, res) => {
                         res.redirect("/ro/forum");
                     });
         });
+    }
+    else {
+        res.send('<p>Nu poti aprecia o postare fara cont</p><input type="button" value="Back" onclick="history.back()">');
     }
 });
 
