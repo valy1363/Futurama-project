@@ -697,7 +697,7 @@ let animate = (time) => {
     //     omocronian.update();
     
     if (start)
-        score += 0.3;
+        score += 0.3 * delta_time;
 
     document.getElementById("score").innerHTML = parseInt(score);
 }
