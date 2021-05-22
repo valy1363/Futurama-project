@@ -82,7 +82,7 @@
                     <% comments.forEach(comment => { %>
                         <div id="comment">
                             <% if (comment.authorId == id) { %>
-                                <a id="x" href="/comment_api/delete-comment/?comment=<%= comment._id %>" title="Delete Comment">×</a>
+                                <a id="x" href="/comment_api/ro/delete-comment/?comment=<%= comment._id %>" title="Delete Comment">×</a>
                             <% } %>
 
                             <img src="../<%= comment.profilePicture %>" id="profile-picture" alt="">
