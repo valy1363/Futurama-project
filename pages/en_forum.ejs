@@ -208,6 +208,7 @@
                         <% if (post.media == undefined) { %>
                             <p><%= post.content %></p>
                         <% } else { %>
+                            <p><%= post.content %></p>
 
                             <% if (post.media.split('.').pop() == "mp4" || post.media.split('.').pop() == "gif") { %>
                                 <video src="../<%= post.media %>" controls></video>
